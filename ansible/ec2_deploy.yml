@@ -63,7 +63,7 @@
     - name: Build Eshop Docker image
       docker_image:
         build:
-          patch: ./app
+          path: ./app
         name: eshop
         tag: latest
         source: build
@@ -76,6 +76,6 @@
           - "80:3000"
 
     - name: Wait for eshop to run
-      wait for:
+      wait_for:
         port:
           80
